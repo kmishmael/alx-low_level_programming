@@ -2,6 +2,8 @@
 
 /**
  * main - entry point of our application
+ * Description: entry point of our application
+ * Return: void
  */
 int main(void)
 {
