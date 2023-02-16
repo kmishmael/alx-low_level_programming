@@ -7,10 +7,10 @@
  */
 int main(void)
 {
-	char string[] = "with proper grammar, but the outcome is a piece of art,";
+	char string[] = "with proper grammar, but the outcome is a piece of art,\n";
 
 	printf("%s", string);
 
-	return 0;
+	return (0);
 
 }
