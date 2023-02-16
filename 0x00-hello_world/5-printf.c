@@ -11,4 +11,6 @@ int main(void)
 
 	printf("%s", string);
 
+	return 0;
+
 }
