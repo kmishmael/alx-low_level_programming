@@ -11,6 +11,6 @@ int main(void)
 	char *str;
 	
 	str = "I do not fear computers. I fear";
-	_puts(str);
+	print_rev(str);
 	return (0);
 }
