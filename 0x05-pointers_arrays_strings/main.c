@@ -8,9 +8,10 @@
  */
 int main(void)
 {
-	char *str;
-	
-	str = "I do not fear computers. I fear";
-	print_rev(str);
+	char s[10] = "My School";
+
+	printf("%s\n", s);
+	rev_string(s);
+	printf("%s\n", s);
 	return (0);
 }
