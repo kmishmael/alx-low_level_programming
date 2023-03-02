@@ -1,37 +1,28 @@
-#include <stdio.h>
-
+#include "main.h"
 /**
- * cap_string - captilizes string
- * @s: character pointer
- * Return: char pointer
+ * *cap_string - capitalises every first letter of words in a string
+ * @s: string to capitalise
+ * Return: capitalized string
  */
 char *cap_string(char *s)
 {
-	int i = 0;
-	int now = 0;
+	int i;
 
-	while (s[i] != '\0')
+	for (i = 0; s[i] != '\0'; i++)
 	{
-		if (s[i] == ' ' || s[i] == '\t' || s[i] == '\n' || s[i] == ',' || s[i] == ';'
-			       || s[i] == '.' || s[i] == '!' || s[i] == '?' || s[i] == '"' || s[i] == '(' ||
-			      s[i] == ')' || s[i] == '{' || s[i] == '}')
-		{
-			now = 1;
-			i++;
-			continue;
-		}
+		if (s[0] >= 97 && s[0] <= 122)
+			s[0] = s[0] - 32;
 
-		if (now == 1)
+		if (s[i] == ' ' || s[i] == '\t' || s[i] == '\n' || s[i] == ','
+				|| s[i] == ';' || s[i] == '.' || s[i] == '!' || s[i] == '?'
+				|| s[i] == '"' || s[i] == '(' || s[i] == ')' || s[i] == '{'
+				 || s[i] == '}')
 		{
-			if (s[i] >= 97)
+			if (s[i + 1] >= 97 && s[i + 1] <= 122)
 			{
-				int n = s[i] % 97;
-
-				s[i] = 65 + n;
+				s[i + 1] = s[i + 1] - 32;
 			}
-			now = 0;
 		}
-		i++;
 	}
 	return (s);
 }
