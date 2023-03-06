@@ -1,4 +1,3 @@
-
 /**
  * _memset - fill memory with const byte
  * @s: char pointer array
@@ -8,12 +7,9 @@
  */
 char *_memset(char *s, char b, unsigned int n)
 {
-	int i = 0;
-	int c = n;
+	unsigned int i = 0;
 
-	if (c < 0)
-		c = -n;
-	while (s[i] != '\0' && i < c)
+	while (i < n)
 	{
 		s[i] = b;
 		i++;
