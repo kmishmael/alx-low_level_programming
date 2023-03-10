@@ -1,36 +1,38 @@
-#include "main.h"
+#include <stdio.h>
 #include <stdlib.h>
-#include <ctype.h>
 
 /**
- * main - entrypoint function
- * @argc: argument c
- * @argv: args array
- * Return: int
+ * main - adds positive numbers.
+ * @argc: argument count
+ * @argv: arguments
+ *
+ * Return: 0
  */
-int main(int argc, char *argv[])
+int main(int argc, char **argv)
 {
-	int i;
-	int sum = 0;
+	int i, n, sum = 0;
+	char *flag;
 
-	if (argc == 1)
+	if (argc < 2)
 	{
 		printf("0\n");
-	} else
-	{
-		i = 1;
-
-		while (i < argc)
-		{
-			if (!isdigit(*argv[i]))
-			{
-				printf("Error\n");
-				return (1);
-			}
-			sum += atoi(argv[i]);
-			i++;
-		}
-		printf("%d\n", sum);
+		return (0);
 	}
+
+	for (i = 1; argv[i]; i++)
+	{
+		n = strtol(argv[i], &flag, 10);
+		if (*flag)
+		{
+			printf("Error\n");
+			return (1);
+		}
+		else
+		{
+			sum += n;
+		}
+	}
+	printf("%d\n", sum);
+
 	return (0);
 }
