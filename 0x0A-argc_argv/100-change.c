@@ -21,14 +21,19 @@ int main(int argc, char *argv[])
 		return (1);
 	}
 	cents = atoi(argv[1]);
-
-	while (i < 5)
+	if (cents < 0)
 	{
-		rem = cents % c[i];
-		coins += cents / c[i];
-		cents = rem;
-		i++;
+		printf("0\n");
+	} else
+	{
+		while (i < 5)
+		{
+			rem = cents % c[i];
+			coins += cents / c[i];
+			cents = rem;
+			i++;
+		}
+		printf("%d\n", coins);
 	}
-	printf("%d\n", coins);
 	return (0);
 }
