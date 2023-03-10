@@ -10,7 +10,6 @@ int main(int argc, char *argv[])
 	char num = argc;
 
 	(void)argv;
-	_putchar(num + '0');
-	_putchar('\n');
+	printf("%d\n", num - 1);
 	return (0);
 }
