@@ -12,12 +12,11 @@ size_t print_list(const list_t *h)
 	char *str;
 	unsigned int i;
 
-	if (h == NULL)
-		return (-1);
 	nodes = 0;
 	while (h != NULL)
 	{
-		if (h->str == NULL)
+		str = h->str;
+		if (str == NULL)
 		{
 			while (*nil != '\0')
 			{
@@ -27,20 +26,15 @@ size_t print_list(const list_t *h)
 		}
 		else
 		{
-			str = malloc(sizeof(char) * h->len);
-			if (str != NULL)
+			_putchar('[');
+			_putchar(h->len + '0');
+			_putchar(']');
+			_putchar(' ');
+			for (i = 0; i < h->len && str[i] && str[i] != '\0'; i++)
 			{
-				str = h->str;
-				_putchar('[');
-				_putchar(h->len + '0');
-				_putchar(']');
-				_putchar(' ');
-				for (i = 0; i < h->len && str[i] && str[i] != '\0'; i++)
-				{
-					_putchar(str[i]);
-				}
-				_putchar('\n');
+				_putchar(str[i]);
 			}
+			_putchar('\n');
 		}
 		nodes++;
 		h = h->next;
