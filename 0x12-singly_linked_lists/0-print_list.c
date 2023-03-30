@@ -28,17 +28,19 @@ size_t print_list(const list_t *h)
 		else
 		{
 			str = malloc(sizeof(char) * h->len);
-			str = h->str;
-
-			_putchar('[');
-			_putchar(h->len + '0');
-			_putchar(']');
-			_putchar(' ');
-			for (i = 0; i < h->len; i++)
+			if (str != NULL)
 			{
-				_putchar(str[i]);
+				str = h->str;
+				_putchar('[');
+				_putchar(h->len + '0');
+				_putchar(']');
+				_putchar(' ');
+				for (i = 0; i < h->len && str[i] && str[i] != '\0'; i++)
+				{
+					_putchar(str[i]);
+				}
+				_putchar('\n');
 			}
-			_putchar('\n');
 		}
 		nodes++;
 		h = h->next;
