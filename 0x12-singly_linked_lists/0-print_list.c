@@ -11,7 +11,7 @@ size_t print_list(const list_t *h)
 	char *nil = "[0] (nil)\n";
 	char *str;
 	unsigned int i;
-	
+
 	if (h == NULL)
 		return (-1);
 	nodes = 0;
