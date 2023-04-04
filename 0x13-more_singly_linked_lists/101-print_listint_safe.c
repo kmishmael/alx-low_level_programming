@@ -9,7 +9,11 @@ size_t print_listint_safe(const listint_t *head)
 {
 	size_t i = 0;
 	long int len;
-
+	
+	if (!head)
+	{
+		exit(98);
+	}
 	while (head != NULL)
 	{
 		len = head - head->next;
