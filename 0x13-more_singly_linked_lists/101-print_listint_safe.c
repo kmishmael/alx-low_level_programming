@@ -21,7 +21,7 @@ size_t print_listint_safe(const listint_t *head)
 		current = current->next;
 		prev = head;
 		c = 0;
-		
+
 		while (c < i)
 		{
 			if (current == prev)
