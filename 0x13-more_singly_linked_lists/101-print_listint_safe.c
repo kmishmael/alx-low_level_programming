@@ -10,6 +10,10 @@ size_t print_listint_safe(const listint_t *head)
 	size_t i = 0;
 	int len;
 
+	if (head == NULL)
+	{
+		exit(98);
+	}
 	while (head != NULL)
 	{
 		len = head - head->next;
