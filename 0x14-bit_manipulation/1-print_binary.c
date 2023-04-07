@@ -8,7 +8,10 @@
  */
 void print_binary(unsigned long int n)
 {
+	char c;
+
 	if (n > 1)
 		print_binary(n >> 1);
-	printf("%ld", n & 1);
+	c = (n & 1) + '0';
+	_putchar(c);
 }
