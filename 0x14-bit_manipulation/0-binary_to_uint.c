@@ -37,7 +37,7 @@ unsigned int binary_to_uint(const char *b)
 	for (j = 0, i = 0; (j < c) && (b[j] != '\0'); j++)
 	{
 		if (b[j] == '0')
-
+			continue;
 		else if (b[j] == '1')
 		{
 			i += power(2, c - 1 - j);
