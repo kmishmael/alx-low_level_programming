@@ -13,7 +13,8 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 	hash_node_t *new_node;
 	hash_node_t *current;
 
-	if (ht == NULL || key == NULL || value == NULL || strlen(key) == 0)
+	if (ht == NULL || key == NULL || value == NULL
+			|| strlen(key) == 0 || ht->size == 0)
 	{
 		return (0);
 	}
@@ -23,6 +24,8 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 		return (0);
 	new_node->key = (char *)key;
 	new_node->value = strdup(value);
+	if (new_node->value == NULL)
+		return (0);
 	new_node->next = NULL;
 	if (ht->array[index] == NULL)
 	{
